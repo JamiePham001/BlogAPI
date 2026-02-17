@@ -13,6 +13,10 @@
 - CORS-enabled API for multiple frontend clients
 - Production and development environment support
 
+### Visual experience for users
+<img width="2555" height="1276" alt="image" src="https://github.com/user-attachments/assets/d3d10dd3-e0fb-49ac-a4df-327bf3272fae" />
+
+### Visual experience for author(s)
 <img width="2553" height="1320" alt="image" src="https://github.com/user-attachments/assets/52a54577-bad1-4060-8b34-c4c45295a18e" />
 
 
