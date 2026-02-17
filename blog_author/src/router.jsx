@@ -5,7 +5,6 @@ import { CreatePost } from "./pages/CreatePost.jsx";
 import { Post } from "./pages/Post.jsx";
 import { UnpublishedPosts } from "./pages/UnpublishedPosts.jsx";
 import { EditPost } from "./pages/EditPost.jsx";
-import { createBrowserRouter } from "react-router-dom";
 
 const routes = [
   {

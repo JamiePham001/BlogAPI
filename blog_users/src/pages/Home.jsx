@@ -1,6 +1,4 @@
 import { useAuth } from "../AuthContext.jsx";
-import { Link } from "react-router-dom";
-import style from "../styles/home.module.css";
 import { BlogCard } from "../components/BlogCard.jsx";
 import { useEffect, useState } from "react";
 

@@ -1,6 +1,5 @@
 import { useAuth } from "../AuthContext.jsx";
-import { useState, useEffect } from "react";
-import { redirect } from "react-router-dom";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {

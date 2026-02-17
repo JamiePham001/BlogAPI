@@ -1,6 +1,5 @@
 import style from "../styles/blogCard.module.css";
 import { Link } from "react-router-dom";
-import { useAuth } from "../AuthContext.jsx";
 
 export const BlogCard = ({ postData }) => {
   const date = new Date(postData.createdAt);
