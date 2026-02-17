@@ -1,0 +1,17 @@
+.pageContainer {
+  width: 700px;
+  padding: 2rem;
+  padding-top: 10rem;
+}
+
+.link {
+  text-decoration: none;
+  color: "inherit";
+  color: #333;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #b3b8bc;
+}

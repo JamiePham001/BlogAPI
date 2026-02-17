@@ -1,0 +1,10 @@
+.link {
+  text-decoration: none;
+  color: "inherit";
+  color: #333;
+  transition: ease-in-out 0.3s;
+}
+
+.link:hover {
+  color: #b3b8bc;
+}

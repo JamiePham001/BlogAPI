@@ -1,0 +1,37 @@
+.title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.content {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.cardContainer {
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  color: #333;
+}
+
+.cardContainer:hover {
+  color: #b3b8bc;
+}
+
+.link {
+  text-decoration: none;
+  color: "inherit";
+  color: #333;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #ebebe1;
+}

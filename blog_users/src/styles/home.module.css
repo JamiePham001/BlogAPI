@@ -1,0 +1,12 @@
+.newPost {
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #b8bd9f;
+  color: white;
+  transition: ease-in-out 0.3s;
+}
+
+.newPost:hover {
+  background-color: #b3b8bc;
+}
