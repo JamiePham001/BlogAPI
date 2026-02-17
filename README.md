@@ -13,6 +13,9 @@
 - CORS-enabled API for multiple frontend clients
 - Production and development environment support
 
+<img width="2553" height="1320" alt="image" src="https://github.com/user-attachments/assets/52a54577-bad1-4060-8b34-c4c45295a18e" />
+
+
 ---
 
 ## Technology Stack
