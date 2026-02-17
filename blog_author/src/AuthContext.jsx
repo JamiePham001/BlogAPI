@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext, useRef } from "react";
 import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
@@ -16,8 +16,12 @@ export const useAuth = () => {
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const initializedRef = useRef(false);
 
   useEffect(() => {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+
     // Check for token in URL params (from redirect)
     const urlParams = new URLSearchParams(window.location.search);
     const urlToken = urlParams.get("token");
@@ -36,7 +40,7 @@ function AuthProvider({ children }) {
         const decoded = jwtDecode(token);
         // decoded.exp is in seconds, Date.now() is in milliseconds
         if (decoded.exp * 1000 > Date.now()) {
-          setUser(decoded);
+          queueMicrotask(() => setUser(decoded));
         } else {
           localStorage.removeItem("token");
         }
@@ -45,7 +49,7 @@ function AuthProvider({ children }) {
         localStorage.removeItem("token");
       }
     }
-    setLoading(false);
+    queueMicrotask(() => setLoading(false));
   }, []);
 
   const login = (token, userData) => {

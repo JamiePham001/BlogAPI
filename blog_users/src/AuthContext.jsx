@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext, useRef } from "react";
 import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
@@ -17,8 +17,12 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
+  const initializedRef = useRef(false);
 
   useEffect(() => {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+
     // retrieve token from local storage
     const storedToken = localStorage.getItem("token");
 
@@ -27,8 +31,8 @@ function AuthProvider({ children }) {
         const decoded = jwtDecode(storedToken);
         // decoded.exp is in seconds, Date.now() is in milliseconds
         if (decoded.exp * 1000 > Date.now()) {
-          setUser(decoded);
-          setToken(storedToken);
+          queueMicrotask(() => setUser(decoded));
+          queueMicrotask(() => setToken(storedToken));
         } else {
           localStorage.removeItem("token");
         }
@@ -37,7 +41,7 @@ function AuthProvider({ children }) {
         localStorage.removeItem("token");
       }
     }
-    setLoading(false);
+    queueMicrotask(() => setLoading(false));
   }, []);
 
   const login = (tokenValue, userData) => {
